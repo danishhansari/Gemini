@@ -1,10 +1,14 @@
 import express, { json } from "express";
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import cors from "cors";
 
 const app = express();
-const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 const PORT = process.env.PORT || 8000;
+
 app.use(json());
+app.use(cors());
+
+const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 
 app.listen(PORT, () => {
   console.log(`app is running fine ${PORT}`);

@@ -8,7 +8,7 @@ function App() {
   const [chat, setChat] = useState([]);
   return (
     <>
-      <ChatContext.Provider value={(chat, setChat)}>
+      <ChatContext.Provider value={{ chat, setChat }}>
         <div className="min-h-screen bg-zinc-800 text-white">
           <Nav />
           <ChatBody />
