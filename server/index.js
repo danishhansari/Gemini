@@ -6,7 +6,12 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 
 app.use(json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+    credentials: true,
+  })
+);
 
 const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 
